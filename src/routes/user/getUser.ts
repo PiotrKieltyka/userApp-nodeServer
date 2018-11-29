@@ -7,6 +7,7 @@ export async function handleCheckUserRoute(req: Request, res: Response) {
 
     try {
         const user = await getUser({prop, value});
+        console.log(user);
     } catch (err) {
         return res.status(500).send(err.message);
     }
