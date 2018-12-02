@@ -1,12 +1,11 @@
 import { IUser } from '../interfaces/user';
 import { User } from '../models/user';
+import { ObjectID } from 'bson';
 
 export async function createUser(user: IUser) {
 
-    console.log(user);
-
     return new User({
-        confirmPassword: user.confirmPassword,
+        _id: new ObjectID(),
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,

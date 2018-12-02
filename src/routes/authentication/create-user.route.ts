@@ -14,13 +14,14 @@ export async function handleCreateUserRoute(req: Request, res: Response) {
 
     try {
         const user = await hashPasswordAndCreateUser(credentials) as IUser;
-        res.status(200).send({ id: user._id });
+        res.status(200).send({ _id: user._id });
     } catch (error) {
-        res.status(500).send({ message: error.message });
+        res.status(500).send();
     }
 }
 
 async function hashPasswordAndCreateUser(credentials: any) {
+    credentials.email = credentials.email.toLowerCase();
     credentials.password = await argon2.hash(credentials.password);
     return await createUser(credentials);
 }

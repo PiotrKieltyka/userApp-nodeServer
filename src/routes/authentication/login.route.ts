@@ -12,7 +12,13 @@ export async function handleLoginRoute(req: Request, res: Response) {
     if (user) {
         try {
             await attemptLogin(credentials, user);
-            res.status(200).send({ id : user._id });
+            res.status(200).json({
+                _id: user._id,
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+            });
+            console.log('user is logged in');
         } catch (err) {
             res.status(403).send();
         }
