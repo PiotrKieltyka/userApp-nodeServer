@@ -1,8 +1,11 @@
-# igorne db keys
-src/keys/
+# ignore env files
+.env
 
-# ignore dist
+# ignore config
+src/config/
+
+# ignore dist folder
 dist/
 
-# ignore node_modules
+# ignore node_modules folder
 node_modules/

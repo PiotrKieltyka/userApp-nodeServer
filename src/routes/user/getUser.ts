@@ -9,12 +9,11 @@ export async function handleGetUserRoute(req: Request, res: Response) {
        return res.sendStatus(400);
     }
 
-    console.log(req.body);
+    if (req.params.id) {
+        console.log('getting user by id', req.params.id);
+        const id = JSON.parse(`{ "_id": "${req.params.id}" }`);
 
-    if (req.body._id) {
-        console.log('getting user by id', req.body._id);
-
-        const user = await getUserById(req.body._id) as IUser;
+        const user = await getUserById(id) as IUser;
 
         if (user) {
             res.status(200).json({

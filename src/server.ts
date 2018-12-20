@@ -8,7 +8,10 @@ import { handleRoutes } from './routes';
 const server = express();
 const PORT = 3010;
 
-mongoose.connect(keys.mongoUri, { useNewUrlParser: true });
+mongoose.connect(`mongodb://${keys.mongoLogin}:${keys.mongoPasswd}@${keys.mongoUri}`, { useNewUrlParser: true },
+    (err) => {
+        err ? console.log('connection to mongoDB error: ', err.message) : console.log('successfully connected to mongoDB');
+    });
 
 server.use(bodyParser.json());
 server.use(allowCORS);
