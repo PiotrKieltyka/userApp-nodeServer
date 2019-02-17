@@ -1,0 +1,2 @@
+# userApp-nodeServer
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/20a8cfd9b4de4dc7ad0641ca59055cc4)](https://app.codacy.com/app/p.kieltyka/userApp-nodeServer?utm_source=github.com&utm_medium=referral&utm_content=PiotrKieltyka/userApp-nodeServer&utm_campaign=Badge_Grade_Settings)
